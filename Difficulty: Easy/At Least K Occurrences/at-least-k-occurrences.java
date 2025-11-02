@@ -4,7 +4,6 @@ class Solution {
         HashMap<Integer, Integer> mp = new HashMap<>();
         
         for(int i=0; i<arr.length-1; i++){
-            int num = arr[i];
             if(mp.containsKey(arr[i])){
                 mp.put(arr[i], mp.getOrDefault(arr[i], 0) + 1);
             }else{
