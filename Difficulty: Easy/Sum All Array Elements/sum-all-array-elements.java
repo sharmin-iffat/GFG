@@ -1,11 +1,10 @@
 class Solution {
-    public static int arraySum(int[] arr) {
+    public int arraySum(List<Integer> arr) {
         // code here
-        int sum = 0;
-        
-        for(int i=0; i<arr.length; i++){
-            sum += arr[i];
+        int sum =0;
+        for(int i=0; i<arr.size(); i++){
+            sum += arr.get(i);
         }
         return sum;
     }
-}
+};
