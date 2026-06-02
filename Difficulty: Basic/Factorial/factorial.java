@@ -3,8 +3,8 @@ class Solution {
     
     int factorial(int n) {
         // code here
-        if(n==1 || n==0) return n;
-        int prod = n * factorial(n-1);
-        return prod;
+        if(n<=1) return n;
+        
+        return n * factorial(n-1);
     }
 }
