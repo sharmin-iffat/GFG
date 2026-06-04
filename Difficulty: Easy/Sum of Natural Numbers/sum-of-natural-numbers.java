@@ -3,10 +3,8 @@
 class Solution {
     static int sumOfNaturals(int n) {
         // code here
-        int sum = 0;
-        for(int i=1; i<=n; i++){
-            sum += i;
-        }
-        return sum;
+        if(n==1) return 1;
+        
+        return n + sumOfNaturals(n-1);
     }
 };
