@@ -17,9 +17,9 @@ class Solution {
     }
 
     public static int findMin(Node root) {
-        
         // code here
         if(root == null) return Integer.MAX_VALUE;
+        
         return Math.min(root.data, Math.min(findMin(root.left), findMin(root.right)));
     }
 }
