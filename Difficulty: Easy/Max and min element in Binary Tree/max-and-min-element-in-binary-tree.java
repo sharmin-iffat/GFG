@@ -20,6 +20,6 @@ class Solution {
         // code here
         if(root == null) return Integer.MAX_VALUE;
         
-        return Math.min(root.data, Math.min(findMin(root.left), findMin(root.right)));
+        return Math.min(root.data, Math.min(findMin (root.left), findMin(root.right)));
     }
 }
