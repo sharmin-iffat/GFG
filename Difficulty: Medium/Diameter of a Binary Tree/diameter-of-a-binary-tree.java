@@ -11,20 +11,21 @@ class Node {
 } */
 
 class Solution {
+    static int max;
     public int diameter(Node root) {
         // code here
         if(root == null) return 0;
-        int a = level(root.left) + level(root.right);
-        int b = diameter(root.left);
-        int c = diameter(root.right);
-        
-        return Math.max(a, Math.max(b,c));
+        max =0;
+        level(root);
+        return max;
     }
     int level(Node root){
         if(root == null) return 0;
         
         int leftLevel = level(root.left);
         int rightLevel = level(root.right);
+        
+        max = Math.max(max, leftLevel + rightLevel);
         
         return 1 + Math.max(leftLevel, rightLevel);
     }
