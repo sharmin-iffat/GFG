@@ -13,24 +13,15 @@ class Node {
 }*/
 
 class Solution {
-    Node lca(Node root, int p, int q) {
+    Node lca(Node root, int n1, int n2) {
         // code here
         if(root == null) return null;
-        if(root.data == p || root.data ==q) return root;
+        if(root.data == n1 || root.data == n2) return root;
         
-        boolean pLiesInLeft = exist(root.left,p);
-        boolean qLiesInLeft = exist(root.left,q);
+        Node l = lca(root.left, n1, n2);
+        Node r = lca(root.right, n1, n2);
         
-        if(pLiesInLeft && qLiesInLeft) return lca(root.left, p, q);
-        else if(!pLiesInLeft && !qLiesInLeft) return lca(root.right, p, q);
-        else return root;
-    }
-    boolean exist(Node root, int val){
-        if(root == null) return false;
-        
-        if(root.data == val) return true;
-        
-        return exist(root.left, val) || exist(root.right, val);
-        
+        if(l != null && r != null) return root;
+        return l == null ? r : l;
     }
 }
