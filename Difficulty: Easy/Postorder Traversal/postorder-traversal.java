@@ -10,20 +10,25 @@ class Node {
 */
 
 class Solution {
-    public void dfs(Node root, ArrayList<Integer> list) {
-        // code here
-        if(root == null) return;
-        dfs(root.left, list);
-        
-        dfs(root.right, list);
-        list.add(root.data);
-        
-    }
     public ArrayList<Integer> postOrder(Node root) {
         // code here
         ArrayList<Integer> list = new ArrayList<>();
         
-        dfs(root, list);
+        Stack<Node> s = new Stack<>();
+        
+         
+        s.push(root);
+        
+        while(s.size() > 0){
+            
+            Node curr = s.pop();
+            list.add(curr.data);
+            if(curr.left != null) s.push(curr.left);
+            if(curr.right != null) s.push(curr.right);
+            
+        }
+        Collections.reverse(list);
+        
         return list;
     }
 }
