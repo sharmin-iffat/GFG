@@ -9,19 +9,34 @@ class Node {
 }
 */
 class Solution {
-    public void dfs(Node root, ArrayList<Integer> list) {
-        // code here
-        if(root == null) return;
-        dfs(root.left, list);
-        list.add(root.data);
-        dfs(root.right, list);
-        
-    }
+    
     public ArrayList<Integer> inOrder(Node root) {
         // code here
         ArrayList<Integer> list = new ArrayList<>();
         
-        dfs(root, list);
+        Stack<Node> st = new Stack<>();
+        
+        Node curr = root;
+        
+        
+        while(st.size() > 0 || curr != null){
+            if(curr != null){
+                if(curr.left != null){
+                    st.push(curr);
+                    curr = curr.left;
+                }else{
+                   
+                    list.add(curr.data);
+                    curr = curr.right;
+                }
+            }
+            else{
+                curr = st.pop();
+                list.add(curr.data);
+                curr = curr.right;
+            }
+        }
         return list;
+        
     }
 }
