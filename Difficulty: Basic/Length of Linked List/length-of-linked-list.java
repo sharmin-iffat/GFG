@@ -13,11 +13,11 @@ class Solution {
     public int getCount(Node head) {
         // code here
         int len = 0;
-        
         Node temp = head;
+        
         while(temp != null){
-            temp = temp.next;
             len++;
+            temp = temp.next;
         }
         return len;
     }
