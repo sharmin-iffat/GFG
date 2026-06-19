@@ -16,8 +16,6 @@ class Solution {
         Node temp = new Node(x);
         
         temp.next = head;
-        head = temp;
-        
-        return head;
+        return temp;
     }
 }
