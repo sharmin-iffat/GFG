@@ -1,17 +1,14 @@
-/*
-Definition for Node
+/* Definition for Node
 class Node {
     int data;
     Node left;
     Node right;
-
     Node(int val) {
         data = val;
         left = null;
         right = null;
     }
-}
-*/
+} */
 
 class Solution {
     static int sumBT(Node root) {
