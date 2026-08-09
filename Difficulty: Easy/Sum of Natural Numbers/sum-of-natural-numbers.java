@@ -1,10 +1,18 @@
-// User function Template for Java
+import java.util.Scanner;
 
-class Solution {
-    static int sumOfNaturals(int n) {
+class GFG {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
         // code here
-        if(n==1) return 1;
+        int ans = helper(n);
         
-        return n + sumOfNaturals(n-1);
+        System.out.print(ans);
     }
-};
+    private static int helper(int n){
+        if(n == 0) return 0;
+        
+        return n + helper(n-1);
+    }
+}
